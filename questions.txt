@@ -1,0 +1,48 @@
+Valuation & Investment Structure
+1	How did you arrive at this company valuation?
+2	What was your valuation in previous funding rounds?
+3	Why are you seeking this specific amount of investment?
+4	How will you utilize the requested funds?
+5	Why are you raising money now instead of using existing cash reserves?
+6	Why are you raising this amount through this channel instead of a larger round with existing investors?
+Financial Performance & Metrics
+7	What is your current monthly/annual revenue run rate?
+8	What are your gross sales versus net revenue?
+9	What is your current profitability and cash flow situation?
+10	How much cash do you currently have in the bank?
+11	What were your total sales last year and year-to-date performance?
+12	Can you break down your sales figures by time period/product line?
+Unit Economics & Cost Structure
+13	Walk us through your detailed unit economics - selling price, cost of goods sold, marketing spend, and contribution margin
+14	What inventory levels are you currently holding?
+15	How much capital have you burned to date, and what was it spent on?
+16	What are your customer acquisition costs and lifetime value?
+Market Position & Competition
+17	What makes your product/service better than existing competitors?
+18	Why should customers choose you over established market leaders?
+19	What is your unique value proposition and competitive differentiation?
+20	How do you position yourself in the market compared to alternatives?
+21	What happens if larger competitors copy your approach?
+22	Is your competitive advantage sustainable long-term or short-term?
+Business Model & Operations
+23	How do you monetize sustainably?
+24	What is your fulfillment rate and cancellation/return rate?
+25	What is the price range of your products/services?
+26	Why would customers buy from you instead of going directly to other channels?
+27	How will you scale faster than industry growth rates?
+28	If you're running multiple business models, how will you manage both effectively with your current resources?
+Market Opportunity & Growth
+29	What is your target market size and growth potential?
+30	How does your business model scale with market growth?
+31	What are your expansion plans and growth strategy?
+32	How do you plan to capture market share from incumbents?
+Team & Execution
+33	When did you actually start this business?
+34	What is your background and expertise in this domain?
+35	How is your team structured to execute on multiple priorities?
+36	What are your key operational challenges and how are you addressing them?
+Risk Assessment
+37	What are the biggest risks to your business model?
+38	How dependent are you on external factors or partnerships?
+39	What would cause your business to fail?
+40	How do you plan to mitigate competitive threats?
