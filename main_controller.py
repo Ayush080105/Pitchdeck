@@ -13,7 +13,8 @@ app = FastAPI()
 @app.post("/vc/audio-pitch")
 async def process_pitch(
     audio_file: UploadFile = File(...),
-    session_id: str = Form(...)  # session ID must be sent with the audio file
+    session_id: str = Form(...),
+    vc_name: str = Form("Default")  # Added VC personality input
 ):
     try:
         # Step 1: Save uploaded MP3
@@ -30,8 +31,8 @@ async def process_pitch(
         if not transcript:
             raise HTTPException(status_code=400, detail="Speech transcription failed.")
 
-        # Step 3: Query VC Bot with session_id
-        user_input = UserInput(message=transcript, session_id=session_id)
+        # Step 3: Query VC Bot with session_id and vc_name
+        user_input = UserInput(message=transcript, session_id=session_id, vc_name=vc_name)
         response = vc_qna(user_input)
 
         reply_text = response.get("message")
@@ -49,6 +50,9 @@ async def process_pitch(
 
 
 @app.post("/vc/reset-audio-session")
-async def reset_audio_session(session_id: str = Form(...)):
-    user_input = UserInput(message="", session_id=session_id)
+async def reset_audio_session(
+    session_id: str = Form(...),
+    vc_name: str = Form("Default")  # Added VC personality input for reset
+):
+    user_input = UserInput(message="", session_id=session_id, vc_name=vc_name)
     return reset_session(user_input)
