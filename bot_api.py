@@ -6,10 +6,11 @@ from pydantic import BaseModel
 from typing import Dict
 from dotenv import load_dotenv
 from groq import Groq
+from openai import OpenAI
 
 # Load environment variables
 load_dotenv(override=True)
-client = Groq(api_key=os.getenv("GROQ_API_KEY"))
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 # Create folder for conversation history
 os.makedirs("conversations", exist_ok=True)
@@ -116,7 +117,7 @@ def vc_qna(user_input: UserInput):
 
         response = client.chat.completions.create(
             messages=conversation,
-            model="llama3-70b-8192"
+            model="gpt-4o-mini"
         )
         reply = response.choices[0].message.content.strip()
         conversation.append({"role": "assistant", "content": reply})
@@ -134,7 +135,7 @@ def vc_qna(user_input: UserInput):
     # Get assistant reply
     response = client.chat.completions.create(
         messages=conversation,
-        model="llama3-70b-8192"
+        model="gpt-4o-mini"
     )
     reply = response.choices[0].message.content.strip()
     conversation.append({"role": "assistant", "content": reply})

@@ -4,9 +4,10 @@ from pydantic import BaseModel
 from typing import Optional
 from dotenv import load_dotenv
 from groq import Groq
+from openai import OpenAI
 
 load_dotenv(override=True)
-client = Groq(api_key=os.getenv("GROQ_API_KEY"))
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
 
 app = FastAPI()
 
@@ -44,7 +45,7 @@ Below is the information shared by the founder:
             section_title = key.replace('_', ' ').title()
             founder_data += f"\n### {section_title}:\n{value.strip()}\n"
 
-    closing = "\nNow, using the information above, generate a powerful, investor-grade startup pitch ready to be delivered to VCs.\n"
+    closing = "\nNow, using the information above, generate a powerful, investor-grade startup pitch ready to be delivered to VCs.Make sure its atleast a 3 minute speech.\n"
     return header.strip() + founder_data + closing
 
 
@@ -123,13 +124,13 @@ async def generate_pitch_form(
     prompt = generate_prompt(data)
 
     response = client.chat.completions.create(
-        model="llama3-70b-8192",
+        model="gpt-4o-mini",
         messages=[
             {"role": "system", "content": "You are a VC pitch expert helping startups write strong, fundable pitches."},
             {"role": "user", "content": prompt}
         ],
         temperature=0.7,
-        max_tokens=1024
+        
     )
 
     pitch_text = response.choices[0].message.content.strip()
